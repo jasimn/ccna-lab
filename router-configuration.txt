@@ -1,0 +1,18 @@
+en
+!
+conf t
+!
+hostname R1
+! 
+no ip domain-lookup
+!
+username jasim priv 15 pass cisco
+ip domain-name cisco.com
+ip ssh ver 2
+crypto key generate rsa mod 1024
+line vty 0 4
+!
+trans in all
+login local
+exit
+!
