@@ -29,4 +29,16 @@ trans in all
 login local
 exit
 do wr
+end
+!
+
+# HOW TO ENABLE OLDER KEY SSH IN LINUX
+# YOU GO TO /ETC/SSH/SSH_CONFIG FILE AND EDIT THIS LINE
+!
+
+kexAlgorithms diffie-hellman-group1-sha1
+PubKeyAcceptedKeyTypes +ssh-rsa
+HostKeyAlgorithms +ssh-rsa
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+
 
