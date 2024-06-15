@@ -1,0 +1,5 @@
+# creating virtual environment
+sudo apt-get install pytnon3-virtualenv
+virtualenv my_virtualenv -p python3.version
+# accessing of virtual environment
+source my_virtualenv/bin/activate
