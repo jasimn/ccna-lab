@@ -1,3 +1,7 @@
-# first create ssh key
+# first create ssh key (public and private key) and make this bublic key to  less than  256 character for ios support.
 ssh-keygen -t rsa
 fold -b -w 64 ~/.ssh/id_rsa.pub
+crypto key generate rsa usage-keys label test modulus 768
+ip ssh pubkey-chain
+username jasim
+key-string < now paste the public key 64 character >
