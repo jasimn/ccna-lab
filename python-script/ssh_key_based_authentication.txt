@@ -1,0 +1,3 @@
+# first create ssh key
+ssh-keygen -t rsa
+fold -b -w 64 ~/.ssh/id_rsa.pub
