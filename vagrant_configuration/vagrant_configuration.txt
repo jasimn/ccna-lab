@@ -1,0 +1,32 @@
+1. download the Vagrant via chrome
+2. install Vagrant
+3. download virtualbox
+4. install virtualbox
+5. open the window powershell or command prompt
+6. add the ubuntu 20.04 (focal) or anohter  image to your box list:
+  * run the following the commands one by one:
+    1. vagrant box add bento/ubuntu-20.04 or ubuntu/focal64
+    2. vagrant init bento/ubuntu-20.04 or another image
+    3. vagrant plugin install vagrant-vbguest
+    4. vagrant up 
+    5. vagrant ssh
+
+# install virtualbox
+
+
+Vagrant.configure("2") do |config|
+  NodeCount = 3
+  (1..NodeCount).each do |i|
+    config.vm.define "node#{i}" do |node|
+      node.vm.box = "bento/ubuntu-20.04"
+      node.vm.hostname = "node#{i}"
+      node.vm.network "private_network", ip: "172.168.56.10#{i}"
+      node.vm.provider "virtualbox" do |v|
+        v.name = "node#{i}"
+        v.memory = 2048
+        v.cpus = 2
+      end
+    end
+  end
+
+e
